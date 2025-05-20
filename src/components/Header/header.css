@@ -1,0 +1,202 @@
+/* Header styles */
+.header {
+    position: relative;
+    min-height: 60vh; /* Reduced height for header below navbar */
+    background: linear-gradient(135deg, #1a2a44, #2a4066); /* Dark gradient for depth */
+    overflow: hidden;
+    width: 100vw; /* Full-screen width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /* Ensure header is below navbar */
+  }
+  
+  .header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 99, 71, 0.4), rgba(0, 123, 255, 0.5));
+    z-index: 2;
+  }
+  
+  .header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=2000') center/cover no-repeat;
+    opacity: 0.15; /* Very subtle static background */
+  }
+  
+  .food-orbit {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    z-index: 1;
+    animation: orbitPath 15s linear infinite;
+  }
+  
+  .orbit-1 {
+    width: 70px;
+    height: 70px;
+    top: 50%;
+    left: 50%;
+    background-image: url('https://img.icons8.com/color/48/000000/pizza.png');
+    animation: orbitPath 16s linear infinite;
+    animation-delay: 0s;
+  }
+  
+  .orbit-2 {
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    left: 50%;
+    background-image: url('https://img.icons8.com/color/48/000000/hamburger.png');
+    animation: orbitPath 14s linear infinite reverse;
+    animation-delay: 1s;
+  }
+  
+  .orbit-3 {
+    width: 65px;
+    height: 65px;
+    top: 50%;
+    left: 50%;
+    background-image: url('https://img.icons8.com/color/48/000000/sushi.png');
+    animation: orbitPath 18s linear infinite;
+    animation-delay: 2s;
+  }
+  
+  .orbit-4 {
+    width: 55px;
+    height: 55px;
+    top: 50%;
+    left: 50%;
+    background-image: url('https://img.icons8.com/color/48/000000/french-fries.png');
+    animation: orbitPath 12s linear infinite reverse;
+    animation-delay: 3s;
+  }
+  
+  @keyframes orbitPath {
+    0% {
+      transform: translate(-150px, 0) rotate(0deg) scale(1);
+      opacity: 0.7;
+    }
+    25% {
+      transform: translate(0, -100px) rotate(90deg) scale(1.2);
+      opacity: 0.9;
+    }
+    50% {
+      transform: translate(150px, 0) rotate(180deg) scale(1);
+      opacity: 0.7;
+    }
+    75% {
+      transform: translate(0, 100px) rotate(270deg) scale(0.8);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translate(-150px, 0) rotate(360deg) scale(1);
+      opacity: 0.7;
+    }
+  }
+  
+  .header-content {
+    position: relative;
+    z-index: 3; /* Above overlay and orbits */
+    text-align: center;
+    color: #fff;
+    animation: fadeIn 1.5s ease-out; /* Fade-in animation for content */
+  }
+  
+  .header-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+  }
+  
+  .header-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+  }
+  
+  .explore-link {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(90deg, #ff6f61, #ff3d00);
+    border-radius: 50px;
+    box-shadow: 0 6px 15px rgba(255, 99, 71, 0.5);
+    transition: all 0.3s ease;
+  }
+  
+  .explore-link:hover {
+    background: linear-gradient(90deg, #e55a4e, #cc2e00);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 99, 71, 0.6);
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .header {
+      min-height: 50vh; /* Further reduced height for smaller screens */
+    }
+  
+    .header-title {
+      font-size: 2.5rem;
+    }
+  
+    .header-subtitle {
+      font-size: 1rem;
+    }
+  
+    .explore-link {
+      padding: 0.6rem 1.5rem;
+      font-size: 1rem;
+    }
+  
+    .food-orbit {
+      width: 50px !important;
+      height: 50px !important;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .header {
+      min-height: 45vh;
+    }
+  
+    .header-title {
+      font-size: 2rem;
+    }
+  
+    .header-subtitle {
+      font-size: 0.9rem;
+    }
+  
+    .food-orbit {
+      width: 40px !important;
+      height: 40px !important;
+    }
+  }

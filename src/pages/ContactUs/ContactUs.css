@@ -1,0 +1,76 @@
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+  }
+  
+  .contact-container {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .contact-title {
+    font-size: 2.5rem;
+    color: #343a40;
+  }
+  
+  .form-control {
+    transition: all 0.3s ease;
+  }
+  
+  .form-control:focus {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    transform: scale(1.02);
+  }
+  
+  .social-icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+    font-size: 1.5rem;
+  }
+  
+  .social-icon:hover {
+    transform: translateY(-5px);
+    color: #007bff !important;
+  }
+  
+  .gap-3 {
+    gap: 1rem;
+  }
+  
+  .submit-btn {
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  .submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: 0.5s;
+  }
+  
+  .submit-btn:hover::before {
+    left: 100%;
+  }
+  
+  .map-container {
+    filter: grayscale(20%);
+    transition: filter 0.3s ease;
+  }
+  
+  .map-container:hover {
+    filter: grayscale(0%);
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
